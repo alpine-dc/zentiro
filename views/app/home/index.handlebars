@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://res.cloudinary.com/dyy6ibm2j/image/upload/v1668624665/zentiro/favicon_b35htb.png">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <link rel="apple-touch-icon" href="https://res.cloudinary.com/dyy6ibm2j/image/upload/v1668531538/zentiro/Zentiro_q2u293.png" />
+    <meta name="robots" content="index, follow" />
+    <meta name="page-locale" content="id,en">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="true" name="HandheldFriendly">
+    <meta content="width" name="MobileOptimized">
+    <meta content="indonesian" name="language">
+
+    <meta name="og:title" content="Zentiro - Give Comfort Around You">
+    <meta name="og:description" content="">
+    <meta name="og:image" content="">
+    <meta property="og:image:width" content="640">
+    <meta property="og:image:height" content="167">
+    <meta name="og:url" content="https://zentiro.co.id/">
+    <meta name="og:site_name" content="">
+    <meta name="og:locale" content="ID_id">
+    <meta name="og:video" content="">
+    <meta name="og:type" content="website">
+
+    <meta name="categories" content="" />
+    <meta name="language" content="ID">
+    <meta name="rating" content="general">
+    <meta name="copyright" content="zentiro">
+    <meta name="author" content="zentiro">
+    <meta name="distribution" content="global">
+    <meta name="publisher" content="zentiro">
+    <meta name="geo.placename" content="DKI Jakarta">
+    <meta name="geo.country" content="ID">
+    <meta name="geo.region" content="ID" />
+    <meta name="tgn.nation" content="Indonesia">
+    <meta name="google-site-verification" content="" />
+    <title>Zentiro - Give Comfort Around You</title>
+</head>
+<body>
+    <section class="navbar-top">
+        <i class="fas fa-truck-fast"></i>
+        <span>FREE Shipping for Jakarta, Tangerang, Depok & Bekasi.</span>
+    </section>
+
+    <section class="header">
+        <nav class="navbar navbar-light sticky-top navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">
+                    <img src="https://res.cloudinary.com/dyy6ibm2j/image/upload/v1668531538/zentiro/Zentiro_q2u293.png" alt="" height="50">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    {{!-- <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5> --}}
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about-us">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/category">Category</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Bathtub
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+                            <li><a class="dropdown-item" href="/category/bathtub-corner">Bathtub Corner</a></li>
+                            <li><a class="dropdown-item" href="/category/bathtub-long">Bathtub Long</a></li>
+                            <li><a class="dropdown-item" href="/category/bathtub-standing">Bathtub Standing</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="/category/bathtub-whirlpool">Whirlpool</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/category/kitchen-sink">Kitchen Sink</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/category/shower-tray">Shower Tray</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/category/washtafel">Washtafel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact-us">Contact Us</a>
+                    </li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+        </nav>
+    </section>
+
+    <section class="banner">
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                    <img src="https://res.cloudinary.com/dyy6ibm2j/image/upload/v1670174365/zentiro/banner-bathtub-standing_q5cqqh.png" class="d-block w-100" alt="bathtub standing zentiro">
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="https://res.cloudinary.com/dyy6ibm2j/image/upload/v1670235100/zentiro/banner-bathtub-corner_pwak9a.png" class="d-block w-100" alt="bathtub corner zentiro">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://res.cloudinary.com/dyy6ibm2j/image/upload/v1670235100/zentiro/banner-kitchen-sink_benmdo.png" class="d-block w-100" alt="kitchen sink zentiro">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+    {{!-- <section class="hero">
+                <img src="https://res.cloudinary.com/dyy6ibm2j/image/upload/v1668706281/zentiro/banner_gixmq4.jpg" class="card-img" alt="basic class E-Cambridge English Centre">
+        <div class="container-fluid">
+            <div class="card text-white">
+                <div class="card-img-overlay">
+                    <h3>Basic English Class</h3>
+                    <h2>LEARNING WHILE</h2>
+                    <h1>HAVING FUN</h1>
+                    <p>
+                    Live online classess<br/>
+                    Every Tuesday<br/>
+                    by appointment
+                    </p>
+                    <a href="/register">
+                    <button type="button" class="btn btn-outline-light">REGISTER NOW</button>
+                    </a>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,128L48,154.7C96,181,192,235,288,250.7C384,267,480,245,576,224C672,203,768,181,864,181.3C960,181,1056,203,1152,208C1248,213,1344,203,1392,197.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+            </div>
+        </div>
+    </section> --}}
+
+    <section class="home-product">
+        <div class="container">
+            <div class="best-seller">
+                <h3>BEST SELLERS</h3>
+            </div>
+            <div class="section">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 article">
+                        <div class="shopcontainer row">
+                            {{#each results}}
+                            <div class="shop col-lg-3 col-md-6 col-sm-6">
+                                <div class="border-product">
+                                    <a href="/product/{{permalink}}">
+                                        <div class="shopBack">
+                                            <img src="{{image}}" alt="{{title}}">
+                                        </div>
+                                    </a>
+                                    <div class="shoptext">
+                                        <h5>
+                                            <a href="/product/{{permalink}}">{{title}}</a>
+                                            </h5>
+                                        {{!-- <div class="rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            <i class="far fa-star"></i>
+                                            <span>6 reviews</span>
+                                        </div> --}}
+                                        <h5>{{price}}</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="all-product">
+                <a href="/products">
+                    <h5>&#187; View All Products &#171;</h5>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-info">
+        <div class="contactInfo container">
+            <div class="row">
+                <div class="col-4 col-md-4 contact-Box">
+                    <div class="box-info">
+                        <div class="info-image">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h5>Call Us</h5>
+                        <p>021 - 29526462</p>
+                    </div>
+                </div>
+                <div class="col-4 col-md-4 contact-Box">
+                    <div class="box-info">
+                        <div class="info-image">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h5>Showroom</h5>
+                        <p>Jakarta - Indonesia</p>
+                    </div>
+                </div>
+                <div class="col-4 col-md-4 contact-Box">
+                    <div class="box-info">
+                        <div class="info-image">
+                            <i class="fas fa-fax"></i>
+                        </div>
+                        <h5>Fax</h5>
+                        <p>021 - 29526466</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 logo-footer">
+                    <a href="/">
+                        <img src="https://res.cloudinary.com/dyy6ibm2j/image/upload/v1668531538/zentiro/Zentiro_q2u293.png" alt="zentiro bathtub" >
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <div class="useful-link">
+                        <h2>Other Links</h2>
+                        <div class="use-links">
+                        <li><a href="/about-us"><i class="fa-solid fa-angles-right"></i> About Us</a></li>
+                        <li><a href="/category"><i class="fa-solid fa-angles-right"></i> Category</a></li>
+                        <li><a href="/contact-us"><i class="fa-solid fa-angles-right"></i> Contact Us</a></li>
+                        <li><a href="/products"><i class="fa-solid fa-angles-right"></i> Products</a></li>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="useful-link">
+                        <h2>Our Categories</h2>
+                        <div class="use-links">
+                        <li><a href="/category/bathtub"><i class="fa-solid fa-angles-right"></i> Bathtub</a></li>
+                        <li><a href="/category/cabinet"><i class="fa-solid fa-angles-right"></i> Cabinet</a></li>
+                        <li><a href="/category/kitchen-sink"><i class="fa-solid fa-angles-right"></i> Kitchen Sink</a></li>
+                        <li><a href="/category/shower-tray"><i class="fa-solid fa-angles-right"></i> Shower Tray</a></li>
+                        <li><a href="/category/washtafel"><i class="fa-solid fa-angles-right"></i> Washtafel</a></li>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="address">
+                        <h2>Address</h2>
+                        <div class="address-links">
+                            <li class="address1"><i class="fa-solid fa-location-dot"></i>Rukan Paris Blok A No.10, GolfLake Residence, Jakarta - ID</li>
+                            <li><a href="mailto:admin@zentiro.co.id"><i class="fa-solid fa-envelope"></i> admin@zentiro.co.id</a></li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <section id="copy-right">
+        <div class="copy-right-sec">
+            <p>Copyright &copy; <script>document.write(new Date().getFullYear())</script> <a href="/"><strong> ZENTIRO</strong></a> || All Rights Reserved</p>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
