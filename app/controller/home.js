@@ -4,10 +4,16 @@ const db = require("../../models");
 
 class Home {
     static async homePage(req, res) {
+        const banner = await db.banner.findAll({
+            where: {
+                status: true,
+            }, raw: true
+        });
         await db.best_seller.findAll({ raw: true })
         .then((data) => {
             res.render('app/home/index', {
                 results: data,
+                banners: banner,
                 layout: false,
             });
         })

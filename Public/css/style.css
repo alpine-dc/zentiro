@@ -349,6 +349,9 @@ li{
     font-weight: 500;
     text-decoration: none;
 }
+.copy-right-sec p {
+    margin: 0;
+}
 
 @media screen and (max-width: 991px) {
     .footer-links {

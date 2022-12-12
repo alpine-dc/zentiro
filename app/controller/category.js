@@ -30,7 +30,6 @@ class Category {
                 permalink: req.params.permalink
             }, raw: true
         });
-        console.log(cat)
         db.product.findAll({
             where: {
                 category_id: cat.id
@@ -59,8 +58,6 @@ class Category {
                 },
                 raw: true,
             });
-            console.log(req.params.category)
-            console.log(data)
             const finalProducts = [];
             if (!data) {
                 res.status(200).send({ status: 'Success', message: `Category ${req.params.category} not found!` });
@@ -70,7 +67,6 @@ class Category {
                         category_id: data.id,
                     }, raw: true
                 });
-                console.log(dataProduct.length)
                 if (dataProduct.length == 0) {
                     res.status(200).send({ status: 'Success', message: `Product with Category ${req.params.category} not found!` });
                 } else {
@@ -104,7 +100,6 @@ class Category {
                 },
                 raw: true,
             });
-            console.log(data)
             if (data.length == 0) {
                 res.status(200).send({ status: 'Success', message: 'Data category not found!' });
             } else {

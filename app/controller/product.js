@@ -12,7 +12,6 @@ class Product {
                 raw: true
             })
             .then((data) => {
-                console.log(data);
                 res.render('app/product/index', {
                     results: data,
                     layout: false,
@@ -32,7 +31,6 @@ class Product {
         })
         .then(async (data) => {
             const addViews = data.views + 1;
-            console.log(addViews)
             await db.product.update({
                 views: addViews,
                 updated_by: 'view product',
@@ -55,7 +53,6 @@ class Product {
             });
         })
         .catch((err) => {
-            console.log(err)
             req.flash('msg_error', err.message || `Some error occurred while find Category ${req.params.category}`);
             res.redirect('/products');
         });
@@ -92,27 +89,23 @@ class Product {
                 },
                 raw: true,
             });
-            console.log(data)
             const result = [];
             if (data.length == 0) {
                 res.status(200).send({ status: 'Success', message: 'Data product not found!' });
             } else {
                 for (const x of data) {
-                    console.log(x)
                     const image = await product_image.findAll({
                         where: {
                             product_id: x.id,
                         },
                         raw: true
                     });
-                    console.log(image)
                     const cat = await category.findOne({
                         where: {
                             id: x.category_id
                         },
                         raw: true
                     });
-                    console.log(cat)
                     const temp = {
                         ...x,
                         cat,

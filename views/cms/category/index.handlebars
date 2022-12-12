@@ -30,9 +30,10 @@
           <table id="table_general1" class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th style="width: 25%">Name</th>
-                <th style="width: 25%">Permalink</th>
-                <th style="width: 25%">Status</th>
+                <th style="width: 15%">Name</th>
+                <th style="width: 15%">Permalink</th>
+                <th style="width: 30%">Image</th>
+                <th style="width: 10%">Status</th>
                 <th style="width: 40%">Action</th>
               </tr>
             </thead>
@@ -41,6 +42,9 @@
                 <tr>
                   <td>{{name}}</td>
                   <td>{{permalink}}</td>
+                  <td>
+                    <img src="{{image}}" style="max-width:200px; max-height:200px;">
+                  </td>
                   <td>
                     {{#if status}}
                       <a class="btn btn-success btn-sm">

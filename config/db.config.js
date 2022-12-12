@@ -1,10 +1,10 @@
 module.exports = {
   development: {
-    username: "root",
+    username: process.env.DB_USERNAME_DEVELOPMENT,
     // password: "",
-    password: "12345678",
-    database: "zentiro",
-    host: "localhost",
+    password: process.env.DB_PASS_DEVELOPMENT,
+    database: process.env.DB_DATABASE_DEVELOPMENT,
+    host: process.env.DB_HOST_DEVELOPMENT,
     dialect: "mysql",
     pool: {
       max: 5, // maximum number of connection in pool
@@ -14,10 +14,10 @@ module.exports = {
     },
   },
   stagging: {
-    username: "root",
-    password: "c52^h+D8ayc6*EpC",
-    database: "zentiro",
-    host: "localhost",
+    username: process.env.DB_USERNAME_STAGING,
+    password: process.env.DB_PASS_STAGING,
+    database: process.env.DB_DATABASE_STAGING,
+    host: process.env.DB_HOST_STAGING,
     dialect: "mysql",
     pool: {
       max: 5,
@@ -27,10 +27,10 @@ module.exports = {
     },
   },
   production: {
-    username: "root",
-    password: "c52^h+D8ayc6*EpC",
-    database: "zentiro",
-    host: "localhost",
+    username: process.env.DB_USERNAME_PRODUCTION,
+    password: process.env.DB_PASS_PRODUCTION,
+    database: process.env.DB_DATABASE_PRODUCTION,
+    host: process.env.DB_HOST_STAGING,
     dialect: "mysql",
     pool: {
       max: 5,

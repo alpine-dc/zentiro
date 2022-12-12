@@ -1,7 +1,7 @@
 require("dotenv").config();
 
 const env = process.env.NODE_ENV || "development";
-const dbConfig = require("../config/config.json")[env];
+const dbConfig = require("../config/db.config.js")[env];
 
 const Sequelize = require("sequelize");
 const sequelize = new Sequelize(

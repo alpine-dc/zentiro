@@ -10,7 +10,6 @@ class Contact {
     }
 
     static create(req, res) {
-        console.log(req.body)
         db.contact_us.create({
             name: req.body.name,
             phone: req.body.phone,

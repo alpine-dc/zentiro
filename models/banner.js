@@ -9,6 +9,9 @@ module.exports = (sequelize, DataTypes) => {
         status: {
 			type: DataTypes.STRING,
         },
+        permalink: {
+			type: DataTypes.STRING,
+        },
 		createdAt: {
 			type: DataTypes.DATE,
 			allowNull: false,
