@@ -22,7 +22,7 @@ class admin {
             .then((data_user) => {
                 if(!data_user) {
                     req.flash('msg_error', `Your Email not found!`);
-                    res.redirect('/cms/login');
+                    res.redirect('/login');
                 } else {
                     user_id = data_user.id;
                     username = data_user.name;
@@ -34,21 +34,21 @@ class admin {
 							req.session.username = username;
 							req.session.user_id = user_id;
 							req.session.permissionLevel = role;
-							res.redirect('/cms/home');
+							res.redirect('/home');
 						} else {
 							req.flash('msg_error', `Your password is wrong`);
-							res.redirect('/cms/login');
+							res.redirect('/login');
 						}
 					}
 					else{
 						req.flash('msg_error', `Unauthorized`);
-						res.redirect('/cms/login');
+						res.redirect('/login');
 					}
                 }
             })
             .catch((err) => {
                 req.flash('msg_error', err.message || "Some error occurred while login.");
-                res.redirect('/cms/login');
+                res.redirect('/login');
             })
     }
 
@@ -143,10 +143,10 @@ class admin {
         Models.user.create(req.body)
             .then((data) => {
                 req.flash('msg_info', "Admin was created successfully");
-                res.redirect('/cms/admin');
+                res.redirect('/admin');
             }).catch((err) => {
                 req.flash('msg_error', err.message || "Some error occurred while creating the Admin.");
-                res.redirect('/cms/admin');
+                res.redirect('/admin');
             });
     }
 
@@ -164,14 +164,14 @@ class admin {
                 }
 
                 req.flash('msg_info', `User Admin was updated successfully`);
-                res.redirect('/cms/admin');
+                res.redirect('/admin');
             } else {
                 req.flash('msg_error', `Cannot update User Admin with id=${id}.`);
-                res.redirect('/cms/admin');
+                res.redirect('/admin');
             }
         }).catch((err) => {
             req.flash('msg_error', err.message || "Error updating User Admin with id=" + id);
-            res.redirect('/cms/admin');
+            res.redirect('/admin');
         });
     }
 
@@ -270,14 +270,14 @@ class admin {
         }).then((result) => {
             if (result == 1) {
                 req.flash('msg_info', `Your Password was updated successfully`);
-                res.redirect('/cms/profile');
+                res.redirect('/profile');
             } else {
                 req.flash('msg_error', `Cannot update Your Password`);
-                res.redirect('/cms/profile');
+                res.redirect('/profile');
             }
         }).catch((err) => {
             req.flash('msg_error', err.message || "Error updating User Admin with id=" + id);
-            res.redirect('/cms/profile');
+            res.redirect('/profile');
         });
     }
 
@@ -311,19 +311,19 @@ class admin {
         // Validate request
         if (!req.body.new_password) {
             req.flash('msg_error', `new_password can not be empty`);
-            res.redirect('/cms/admin/changepassword/' + id);
+            res.redirect('/admin/changepassword/' + id);
             return;
         }
 
         if (!req.body.confirm_password) {
             req.flash('msg_error', `confirm_password can not be empty`);
-            res.redirect('/cms/admin/changepassword/' + id);
+            res.redirect('/admin/changepassword/' + id);
             return;
         }
 
         if (req.body.new_password != req.body.confirm_password) {
             req.flash('msg_error', `New password and confirmation password are not the same!`);
-            res.redirect('/cms/admin/changepassword/' + id);
+            res.redirect('/admin/changepassword/' + id);
             return;
         }
 
@@ -339,14 +339,14 @@ class admin {
         }).then((result) => {
             if (result == 1) {
                 req.flash('msg_info', `The Password was updated successfully`);
-                res.redirect('/cms/admin/edit/' + id);
+                res.redirect('/admin/edit/' + id);
             } else {
                 req.flash('msg_error', `Cannot update Password`);
-                res.redirect('/cms/admin/edit/' + id);
+                res.redirect('/admin/edit/' + id);
             }
         }).catch((err) => {
             req.flash('msg_error', err.message || "Error updating User with id=" + id);
-            res.redirect('/cms/admin/edit/' + id);
+            res.redirect('/admin/edit/' + id);
         });
     }
 
@@ -360,20 +360,20 @@ class admin {
         }).then((result) => {
             if (result == 1) {
                 req.flash('msg_info', "User Admin was deleted successfully");
-                res.redirect('/cms/admin');
+                res.redirect('/admin');
             } else {
                 req.flash('msg_error', `Cannot delete User Admin with id=${id}`);
-                res.redirect('/cms/admin');
+                res.redirect('/admin');
             }
         }).catch((err) => {
             req.flash('msg_error', err.message || "Could not delete admin with id=" + id);
-            res.redirect('/cms/admin');
+            res.redirect('/admin');
         });
     }
 
     static logout(req, res) {
         req.session.destroy();
-        res.redirect('/cms/login');
+        res.redirect('/login');
     }
 }
 

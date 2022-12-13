@@ -69,11 +69,11 @@ class AboutUs {
         })
         .then((result) => {
             req.flash("msg_info", "About Us was created successfully.");
-            res.redirect("/cms/about-us");
+            res.redirect("/about-us");
         })
         .catch((err) => {
             req.flash("msg_error", err.message || "Some error occurred while creating the About Us!");
-            res.redirect("/cms/about-us");
+            res.redirect("/about-us");
         });
     }
 
@@ -112,15 +112,15 @@ class AboutUs {
         .then((result) => {
             if (result == 1) {
                 req.flash("msg_info", `About Us was updated successfully`);
-                res.redirect("/cms/about-us");
+                res.redirect("/about-us");
             } else {
                 req.flash("msg_error", `Cannot update About Us with id=${id}.`);
-                res.redirect("/cms/about-us");
+                res.redirect("/about-us");
             }
         })
         .catch((err) => {
             req.flash("msg_error", err.message || "Error updating About Us with id=" + id);
-            res.redirect("/cms/about-us");
+            res.redirect("/about-us");
         });
     }
 
@@ -136,15 +136,15 @@ class AboutUs {
         .then((result) => {
             if (result == 1) {
                 req.flash("msg_info", "About Us was deleted successfully.");
-                res.redirect("/cms/about-us");
+                res.redirect("/about-us");
             } else {
                 req.flash("msg_error", `Cannot delete About Us with id=${id}!`);
-                res.redirect("/cms/about-us");
+                res.redirect("/about-us");
             }
         })
         .catch((err) => {
             req.flash("msg_error", err.message || "Could not delete About Us with id=" + id);
-            res.redirect("/cms/about-us");
+            res.redirect("/about-us");
         });
     }
 }

@@ -47,7 +47,7 @@ class Banner {
         })
         .then((data) => {
             req.flash('msg_info', 'Upload Banner was succesfully');
-            res.redirect('/cms/banner');
+            res.redirect('/banner');
         }).catch((err) => {
             req.flash('msg_error', err.message || 'Some error occurred while upload banner.');
         });
@@ -91,15 +91,15 @@ class Banner {
             .then((result) => {
             if (result == 1) {
                 req.flash("msg_info", `Banner was updated successfully.`);
-                res.redirect("/cms/banner");
+                res.redirect("/banner");
             } else {
                 req.flash("msg_error", `Cannot update Banner!`);
-                res.redirect("/cms/banner");
+                res.redirect("/banner");
             }
             })
             .catch((err) => {
             req.flash("msg_error", err.message || "Error updating Banner!");
-            res.redirect("/cms/banner");
+            res.redirect("/banner");
             });
     }
 
@@ -115,15 +115,15 @@ class Banner {
         .then((result) => {
         if (result == 1) {
             req.flash("msg_info", "Banner was deleted successfully.");
-            res.redirect("/cms/banner");
+            res.redirect("/banner");
         } else {
             req.flash("msg_error", `Cannot delete Banner with id=${id}!`);
-            res.redirect("/cms/banner");
+            res.redirect("/banner");
         }
         })
         .catch((err) => {
         req.flash("msg_error", err.message || "Could not delete Banner with id=" + id);
-        res.redirect("/cms/banner");
+        res.redirect("/banner");
         });
     }
 }

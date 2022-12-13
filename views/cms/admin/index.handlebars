@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div style="text-align: right; padding-bottom: 20px;">
-        <a class="btn btn-success" href="/cms/cms-user/create">
+        <a class="btn btn-success" href="/cms-user/create">
             <i class="fas fa-plus"></i> Add
         </a>
     </div>
@@ -40,13 +40,13 @@
                                 <td>{{ email }}</td>
                                 <td>{{ role }}</td>
                                 <td>
-                                    <a class="btn btn-info btn-sm" href="/cms/cms-user/edit/{{id}}">
+                                    <a class="btn btn-info btn-sm" href="/cms-user/edit/{{id}}">
                                         <i class="fas fa-pencil-alt">
                                         </i>
                                         Edit
                                     </a>
 									{{#ifCond role '==' 'user'}}
-										<a class="btn btn-primary btn-sm" href="/cms/cms-user/address/{{id}}">
+										<a class="btn btn-primary btn-sm" href="/cms-user/address/{{id}}">
 											<i class="fas fa-address-card">
 											</i>
 											Address
@@ -74,7 +74,7 @@
 <!-- /.container-fluid -->
 
 <!-- Modal Delete Produk-->
-<form id="add-row-form" action="/cms/cms-user/delete/" method="post">
+<form id="add-row-form" action="/cms-user/delete/" method="post">
     <div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">

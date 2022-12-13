@@ -34,15 +34,15 @@ class ContactUs {
             .then((result) => {
                 if (result == 1) {
                     req.flash("msg_info", "Success to change status.");
-                    res.redirect("/cms/contact-us");
+                    res.redirect("/contact-us");
                 } else {
                     req.flash("msg_error", "Cannot update the status!");
-                    res.redirect("/cms/contact-us");
+                    res.redirect("/contact-us");
                 }
             })
             .catch((err) => {
                 req.flash("msg_error", err.message || "Could not update status with id=" + id);
-                res.redirect("/cms/contact-us");
+                res.redirect("/contact-us");
             });
         }
 }

@@ -29,7 +29,6 @@ class Faq {
         Models.faq
         .findByPk(req.params.id)
         .then((data) => {
-            console.log(data.dataValues)
             res.render("cms/faqs/detail", {
                 id: id,
                 results: data.dataValues,
@@ -72,11 +71,11 @@ class Faq {
         })
         .then((result) => {
             req.flash("msg_info", "FAQ was created successfully.");
-            res.redirect("/cms/faqs");
+            res.redirect("/faqs");
         })
         .catch((err) => {
             req.flash("msg_error", err.message || "Some error occurred while creating the FAQ!");
-            res.redirect("/cms/faqs");
+            res.redirect("/faqs");
         });
     }
 
@@ -117,15 +116,15 @@ class Faq {
         .then((result) => {
             if (result == 1) {
                 req.flash("msg_info", `FAQ was updated successfully`);
-                res.redirect("/cms/faqs");
+                res.redirect("/faqs");
             } else {
                 req.flash("msg_error", `Cannot update FAQ with id=${id}.`);
-                res.redirect("/cms/faqs");
+                res.redirect("/faqs");
             }
         })
         .catch((err) => {
             req.flash("msg_error", err.message || "Error updating FAQ with id=" + id);
-            res.redirect("/cms/faqs");
+            res.redirect("/faqs");
         });
     }
 
@@ -141,15 +140,15 @@ class Faq {
         .then((result) => {
             if (result == 1) {
                 req.flash("msg_info", "FAQ was deleted successfully.");
-                res.redirect("/cms/faqs");
+                res.redirect("/faqs");
             } else {
                 req.flash("msg_error", `Cannot delete FAQ with id=${id}!`);
-                res.redirect("/cms/faqs");
+                res.redirect("/faqs");
             }
         })
         .catch((err) => {
             req.flash("msg_error", err.message || "Could not delete FAQ with id=" + id);
-            res.redirect("/cms/faqs");
+            res.redirect("/faqs");
         });
     }
 }

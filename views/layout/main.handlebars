@@ -141,12 +141,12 @@
         </li>
         {{!-- {{#checkpermissionlevelOrAdminCanDoThisAction session.permissionLevel 1}} --}}
         {{!-- <li class="nav-item d-none d-sm-inline-block">
-          <a href="/cms/profile" class="nav-link {{ profile_active }}">Profile</a>
+          <a href="/profile" class="nav-link {{ profile_active }}">Profile</a>
         </li> --}}
         {{!-- {{/checkpermissionlevelOrAdminCanDoThisAction}} --}}
 
         <li class="nav-item d-none d-sm-inline-block">
-          <a href="/cms/logout" class="nav-link">Logout</a>
+          <a href="/logout" class="nav-link">Logout</a>
         </li>
       </ul>
 
@@ -156,7 +156,7 @@
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-light-primary elevation-4">
       <!-- Brand Logo -->
-      <a href="/cms/home" class="brand-link">
+      <a href="/home" class="brand-link">
         <img src="https://res.cloudinary.com/dyy6ibm2j/image/upload/v1668534286/zentiro/Logo_Zentiro1_aco2tm.png" style="max-width:100px; max-height:100px;"
           style="opacity: .8">
         <span class="brand-text font-weight-light">Dashboard</span>
@@ -170,7 +170,7 @@
             <img src="/img/admin.jpg" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="/cms/profile" class="d-block">{{session.username}}</a>
+            <a href="/profile" class="d-block">{{session.username}}</a>
           </div>
         </div>
 
@@ -181,7 +181,7 @@
                with font-awesome or any other icon font library -->
             {{!-- {{#checkpermissionlevelOrAdminCanDoThisAction session.permissionLevel 1}} --}}
             <li class="nav-item">
-              <a href="/cms/home" class="nav-link {{ home_active }}">
+              <a href="/home" class="nav-link {{ home_active }}">
                 <i class="nav-icon fas fa-home"></i>
                 <p>
                   Home
@@ -189,25 +189,25 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="/cms/admin" class="nav-link {{ admin_active }}">
+              <a href="/admin" class="nav-link {{ admin_active }}">
                 <i class="fas fa-user-cog nav-icon"></i>
                 <p>Admin User</p>
               </a>
             </li>
             {{!-- <li class="nav-item">
-              <a href="/cms/student" class="nav-link {{ student_active }}">
+              <a href="/student" class="nav-link {{ student_active }}">
                 <i class="fas fa-user-cog nav-icon"></i>
                 <p>Student</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="/cms/document" class="nav-link {{ document_active }}">
+              <a href="/document" class="nav-link {{ document_active }}">
                 <i class="fas fa-file-upload nav-icon"></i>
                 <p>Upload Sertificate</p>
               </a>
             </li> --}}
             <li class="nav-item">
-              <a href="/cms/about-us" class="nav-link {{ aboutus_active }}">
+              <a href="/about-us" class="nav-link {{ aboutus_active }}">
                 <i class="nav-icon fas fa-building"></i>
                 <p>
                   About Us
@@ -215,7 +215,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="/cms/banner" class="nav-link {{ banner_active }}">
+              <a href="/banner" class="nav-link {{ banner_active }}">
                 <i class="fas fa-ad nav-icon"></i>
                 <p>
                   Banner
@@ -223,7 +223,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="/cms/category" class="nav-link {{ category_active }}">
+              <a href="/category" class="nav-link {{ category_active }}">
                 <i class="fas fa-tags nav-icon"></i>
                 <p>
                   Category
@@ -231,7 +231,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="/cms/contact-us" class="nav-link {{ contactus_active }}">
+              <a href="/contact-us" class="nav-link {{ contactus_active }}">
                 <i class="fas fa-address-book nav-icon"></i>
                 <p>
                   Contact Us
@@ -239,7 +239,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="/cms/faqs" class="nav-link {{ faq_active }}">
+              <a href="/faqs" class="nav-link {{ faq_active }}">
                 <i class="far fa-comments nav-icon"></i>
                 <p>
                   FAQ
@@ -247,7 +247,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="/cms/products" class="nav-link {{ product_active }}">
+              <a href="/products" class="nav-link {{ product_active }}">
                 <i class="fas fa-bath nav-icon"></i>
                 <p>
                   Product
@@ -255,7 +255,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="/cms/tnc" class="nav-link {{ tnc_active }}">
+              <a href="/tnc" class="nav-link {{ tnc_active }}">
                 <i class="fas fa-file-alt nav-icon"></i>
                 <p>
                   Term & Condition
@@ -265,7 +265,7 @@
             {{!-- {{/checkpermissionlevelOrAdminCanDoThisAction}} --}}
             {{!-- {{#checkpermissionlevelOrAdminCanDoThisAction session.permissionLevel 3}}
             <li class="nav-item">
-              <a href="/cms/dashboard" class="nav-link {{ dashboard_active }}">
+              <a href="/dashboard" class="nav-link {{ dashboard_active }}">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
                   Dashboard
@@ -284,13 +284,13 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="/cms/address-verification/active" class="nav-link {{ verification_verified_active }}">
+                  <a href="/address-verification/active" class="nav-link {{ verification_verified_active }}">
                     <i class="fas fa-check nav-icon"></i>
                     <p>Active</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="/cms/address-verification/inactive" class="nav-link {{ verification_unverified_active }}">
+                  <a href="/address-verification/inactive" class="nav-link {{ verification_unverified_active }}">
                     <i class="fas fa-times nav-icon"></i>
                     <p>Inactive</p>
                   </a>
@@ -307,19 +307,19 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="/cms/partnership-content" class="nav-link {{ partnership_content_active }}">
+                  <a href="/partnership-content" class="nav-link {{ partnership_content_active }}">
                     <i class="fas fa-file nav-icon"></i>
                     <p>Content</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="/cms/partnership-benefit" class="nav-link {{ partnership_benefit_active }}">
+                  <a href="/partnership-benefit" class="nav-link {{ partnership_benefit_active }}">
                     <i class="fas fa-tags nav-icon"></i>
                     <p>Benefit</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/cms/mitra" class="nav-link {{ partnership_list_active }}">
+                    <a href="/mitra" class="nav-link {{ partnership_list_active }}">
                         <i class="nav-icon fas fa-list-alt"></i>
                         <p>
                         List
@@ -335,19 +335,19 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="/cms/career-content" class="nav-link {{ careerContent_active }}">
+                    <a href="/career-content" class="nav-link {{ careerContent_active }}">
                         <i class="nav-icon fa fa-graduation-cap"></i>
                         <p>Content</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/cms/career-list" class="nav-link {{ careerList_active }}">
+                    <a href="/career-list" class="nav-link {{ careerList_active }}">
                         <i class="nav-icon fas fa-briefcase"></i>
                         <p>List</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/cms/career-request" class="nav-link {{ careerRequest_active }}">
+                    <a href="/career-request" class="nav-link {{ careerRequest_active }}">
                         <i class="nav-icon fas fa-envelope"></i>
                         <p>Request</p>
                     </a>
@@ -364,19 +364,19 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="/cms/location/region" class="nav-link {{ location_region_active }}">
+                  <a href="/location/region" class="nav-link {{ location_region_active }}">
                     <i class="fas fa-map-marker nav-icon"></i>
                     <p>Region</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="/cms/location/city" class="nav-link {{ location_city_active }}">
+                  <a href="/location/city" class="nav-link {{ location_city_active }}">
                     <i class="fas fa-bookmark nav-icon"></i>
                     <p>City</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="/cms/location" class="nav-link {{ location_list_active }}">
+                  <a href="/location" class="nav-link {{ location_list_active }}">
                     <i class="fas fa-user-cog nav-icon"></i>
                     <p>List</p>
                   </a>
@@ -393,25 +393,25 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="/cms/cms_user" class="nav-link {{ cms_user_active }}">
+                  <a href="/cms_user" class="nav-link {{ cms_user_active }}">
                     <i class="fas fa-user-cog nav-icon"></i>
                     <p>CMS User</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="/cms/user" class="nav-link {{ user_active }}">
+                  <a href="/user" class="nav-link {{ user_active }}">
                     <i class="fas fa-user-cog nav-icon"></i>
                     <p>User</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="/cms/career-location" class="nav-link {{ careerLocation_active }}">
+                  <a href="/career-location" class="nav-link {{ careerLocation_active }}">
                     <i class="fas fa-map-marker nav-icon"></i>
                     <p>Career Location</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="/cms/department" class="nav-link {{ department_active }}">
+                  <a href="/department" class="nav-link {{ department_active }}">
                     <i class="fas fa-bookmark nav-icon"></i>
                     <p>Department</p>
                   </a>

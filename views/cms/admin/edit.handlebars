@@ -9,7 +9,7 @@
                     </h1>
                 </div>
                 <!-- /.card-header -->
-                <form role="form" id="quickForm" action="/cms/cms_user/edit/{{id}}" method="POST"
+                <form role="form" id="quickForm" action="/cms_user/edit/{{id}}" method="POST"
                     enctype="multipart/form-data">
                     <div class="card-body">
                         {{#if messages.msg_info}}
@@ -66,10 +66,10 @@
                     <div class="card-footer">
                         <input type="hidden" name="_method" value="PUT">
                         <button type="submit" class="btn btn-primary">Update</button>
-                        <a class="btn btn-info" href="/cms/cms_user/changepassword/{{id}}">
+                        <a class="btn btn-info" href="/cms_user/changepassword/{{id}}">
                             Change Password
                         </a>
-                        <a class="btn btn-secondary" href="/cms/cms_user">
+                        <a class="btn btn-secondary" href="/cms_user">
                             Cancel
                         </a>
                     </div>

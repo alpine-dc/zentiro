@@ -73,11 +73,11 @@ class Category {
         })
         .then((result) => {
             req.flash("msg_info", "Category was created successfully.");
-            res.redirect("/cms/category");
+            res.redirect("/category");
         })
         .catch((err) => {
             req.flash("msg_error", err.message || "Some error occurred while creating the Category!");
-            res.redirect("/cms/category");
+            res.redirect("/category");
         });
     }
 
@@ -119,15 +119,15 @@ class Category {
         .then((result) => {
             if (result == 1) {
                 req.flash("msg_info", `Category was updated successfully`);
-                res.redirect("/cms/category");
+                res.redirect("/category");
             } else {
                 req.flash("msg_error", `Cannot update Category with id=${id}.`);
-                res.redirect("/cms/category");
+                res.redirect("/category");
             }
         })
         .catch((err) => {
             req.flash("msg_error", err.message || "Error updating Category with id=" + id);
-            res.redirect("/cms/category");
+            res.redirect("/category");
         });
     }
 
@@ -143,15 +143,15 @@ class Category {
         .then((result) => {
             if (result == 1) {
                 req.flash("msg_info", "Category was deleted successfully.");
-                res.redirect("/cms/category");
+                res.redirect("/category");
             } else {
                 req.flash("msg_error", `Cannot delete Category with id=${id}!`);
-                res.redirect("/cms/category");
+                res.redirect("/category");
             }
         })
         .catch((err) => {
             req.flash("msg_error", err.message || "Could not delete Category with id=" + id);
-            res.redirect("/cms/category");
+            res.redirect("/category");
         });
     }
 }

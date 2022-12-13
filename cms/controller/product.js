@@ -28,7 +28,6 @@ class Products {
                     img
                 }
                 allData.push(temp);
-                console.log(img)
             }
             res.render("cms/products", {
                 results: allData,
@@ -51,7 +50,6 @@ class Products {
         Models.product
         .findByPk(req.params.id)
         .then(async (data) => {
-            console.log(data)
             const allData = [];
             const img = await Models.product_image.findAll({
                 where: {
@@ -86,8 +84,6 @@ class Products {
         var data_default = {
             category: "",
         };
-        console.log(data_default)
-        console.log(categories)
         res.render("cms/products/create", {
             results: data_default,
             category: categories,
@@ -104,7 +100,6 @@ class Products {
             currency: 'IDR',
         });
         const price = formatter.format(req.body.price);
-        console.log(formatter.format(8000000));
         Models.product.create({
             title: req.body.title,
             description: req.body.description,
@@ -126,11 +121,11 @@ class Products {
             //     updatedAt: new Date()
             // });
             req.flash('msg_info', "Success Add New Product");
-            res.redirect('/cms/products');
+            res.redirect('/products');
         })
         .catch((err) => {
             req.flash('msg_error', err.message || "Failed To Add New Product.");
-            res.redirect('/cms/products');
+            res.redirect('/products');
         });
     }
 
@@ -215,15 +210,15 @@ class Products {
         .then((result) => {
             if (result == 1) {
                 req.flash("msg_info", `Success updated Products.`);
-                res.redirect("/cms/products");
+                res.redirect("/products");
             } else {
                 req.flash("msg_error", `Cannot update Products with id=${id}.`);
-                res.redirect("/cms/products");
+                res.redirect("/products");
             }
         })
         .catch((err) => {
             req.flash("msg_error", err.message || "Error updating Products with id=" + id);
-            res.redirect("/cms/products");
+            res.redirect("/products");
         });
     }
 
@@ -239,15 +234,15 @@ class Products {
         .then((result) => {
             if (result == 1) {
                 req.flash("msg_info", "Product was deleted successfully.");
-                res.redirect("/cms/products");
+                res.redirect("/products");
             } else {
                 req.flash("msg_error", `Cannot delete Product with id=${id}!`);
-                res.redirect("/cms/products");
+                res.redirect("/products");
             }
         })
         .catch((err) => {
             req.flash("msg_error", err.message || "Could not delete Product with id=" + id);
-            res.redirect("/cms/products");
+            res.redirect("/products");
         });
     }
 }

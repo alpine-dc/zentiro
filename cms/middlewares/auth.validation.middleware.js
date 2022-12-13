@@ -7,13 +7,13 @@ exports.validLogin = (req, res, next) => {
         return next();
     } else {
         req.flash('msg_error', `Please login first`);
-        res.redirect('/cms/login');
+        res.redirect('/login');
     }
 };
 
 exports.validLogin2 = (req, res, next) => {
     if (req.session.loggedin) {
-        res.redirect('/cms/home');
+        res.redirect('/home');
     } else {
         return next();
     }
@@ -211,7 +211,7 @@ exports.minimumPermissionLevelRequired = (required_permission_level) => {
             return next();
         } else {
             req.flash('msg_error', "Invalid Permission, because user permission_level = " + user_permission_level + ", required minimum permission_level = " + required_permission_level);
-            res.redirect('/cms/login');
+            res.redirect('/login');
         }
     };
 };
@@ -223,7 +223,7 @@ exports.PermissionLevelRequired = (required_permission_level) => {
             return next();
         } else {
             req.flash('msg_error', "Invalid Permission, because user permission_level = " + user_permission_level + ", required minimum permission_level = " + required_permission_level);
-            res.redirect('/cms/login');
+            res.redirect('/login');
         }
     };
 };
@@ -250,7 +250,7 @@ exports.MultiPermissionLevelRequiredOrAdmin = (required_permission_level) => {
                 return next();
             } else {
                 req.flash('msg_error', "Invalid Permission, because user permission_level = " + user_permission_level + ", required minimum permission_level = " + required_permission_level);
-                res.redirect('/cms/login');
+                res.redirect('/login');
             }
         }
     };

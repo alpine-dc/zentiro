@@ -70,11 +70,11 @@ class TnC {
         })
         .then((result) => {
             req.flash("msg_info", "Term and Condition was created successfully.");
-            res.redirect("/cms/tnc");
+            res.redirect("/tnc");
         })
         .catch((err) => {
             req.flash("msg_error", err.message || "Some error occurred while creating the Term and Condition!");
-            res.redirect("/cms/tnc");
+            res.redirect("/tnc");
         });
     }
 
@@ -112,15 +112,15 @@ class TnC {
         .then((result) => {
             if (result == 1) {
                 req.flash("msg_info", `Term and Condition was updated successfully`);
-                res.redirect("/cms/tnc");
+                res.redirect("/tnc");
             } else {
                 req.flash("msg_error", `Cannot update Term and Condition with id=${id}.`);
-                res.redirect("/cms/tnc");
+                res.redirect("/tnc");
             }
         })
         .catch((err) => {
             req.flash("msg_error", err.message || "Error updating Term and Condition with id=" + id);
-            res.redirect("/cms/tnc");
+            res.redirect("/tnc");
         });
     }
 
@@ -136,15 +136,15 @@ class TnC {
         .then((result) => {
             if (result == 1) {
                 req.flash("msg_info", "Term and Condition was deleted successfully.");
-                res.redirect("/cms/tnc");
+                res.redirect("/tnc");
             } else {
                 req.flash("msg_error", `Cannot delete Term and Condition with id=${id}!`);
-                res.redirect("/cms/tnc");
+                res.redirect("/tnc");
             }
         })
         .catch((err) => {
             req.flash("msg_error", err.message || "Could not delete Term and Condition with id=" + id);
-            res.redirect("/cms/tnc");
+            res.redirect("/tnc");
         });
     }
 }

@@ -12,8 +12,7 @@ const path = require('path');
 const flash = require("express-flash");
 const db = require('./models');
 var MemoryStore = require("memorystore")(session);
-const apiRouter = require('./app/routes/index'),
-  adminRouter = require("./cms/routes/admin"),
+const adminRouter = require("./cms/routes/admin"),
   bannerRouter = require("./cms/routes/banner"),
   dashboardRouter = require("./cms/routes/index"),
   categoryRouter = require("./cms/routes/category"),
@@ -22,9 +21,6 @@ const apiRouter = require('./app/routes/index'),
   faqRouter = require("./cms/routes/faq"),
   tncRouter = require("./cms/routes/term_condition"),
   contactUsRouter = require("./cms/routes/contact_us");
-const { notFound, errorHandler } = require('./app/middlewares/error');
-const cron = require("node-cron");
-const CronService = require("./app/services/scheduler");
 var fs = require("fs");
 var http = require("http");
 var https = require("https");
@@ -86,11 +82,11 @@ app.get('/session', (req, res) => {
 //   res.redirect('/cms/login');
 // });
 
-app.get('/cms', (req, res) => {
-  res.redirect('/cms/login');
+app.get('/', (req, res) => {
+  res.redirect('/login');
 });
 
-app.use('/cms', [
+app.use('/', [
   dashboardRouter,
   adminRouter,
   bannerRouter,
@@ -102,10 +98,6 @@ app.use('/cms', [
   contactUsRouter
 ]);
 
-// API
-app.use('/', [
-  apiRouter,
-]);
 // app.use(notFound)
 // app.use(errorHandler)
 
@@ -144,9 +136,5 @@ process.on('unhandledRejection', (reason, promise) => {
 
 // Sync database
 db.sequelize.sync({ alter: true });
-
-cron.schedule("0 0 * * *", function () {
-  CronService.bestSeller();
-});
 
 module.exports = app;
