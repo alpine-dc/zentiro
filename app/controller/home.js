@@ -9,6 +9,7 @@ class Home {
                 status: true,
             }, raw: true
         });
+        console.log(banner)
         await db.best_seller.findAll({ raw: true })
         .then((data) => {
             res.render('app/home/index', {
