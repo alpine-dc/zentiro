@@ -11,6 +11,7 @@ const expbs = require("express-handlebars");
 const path = require('path');
 const flash = require("express-flash");
 const db = require('./models');
+var MemoryStore = require("memorystore")(session);
 const apiRouter = require('./app/routes/index'),
   adminRouter = require("./cms/routes/admin"),
   bannerRouter = require("./cms/routes/banner"),
@@ -24,21 +25,28 @@ const apiRouter = require('./app/routes/index'),
 const { notFound, errorHandler } = require('./app/middlewares/error');
 const cron = require("node-cron");
 const CronService = require("./app/services/scheduler");
+var fs = require("fs");
 var http = require("http");
 var https = require("https");
-const PORT_HTTPS = process.env.PORT_HTTPS || 8443;
+const PORT_HTTPS = process.env.PORT_HTTPS;
 
 
-// app.use(express.static(path.resolve(__dirname, 'Public')));
-app.use(express.static('Public'));
+app.use(express.static(path.resolve(__dirname, 'Public')));
+// app.use(express.static('Public'));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(
     session({
-      secret: 'keyboard cat',
-    })
+    cookie: { maxAge: 86400000 },
+    store: new MemoryStore({
+      checkPeriod: 86400000, // prune expired entries every 24h
+    }),
+    resave: false,
+    secret: "secretpass123456",
+    saveUninitialized: true,
+  })
 );
 
 app.use(cors());
@@ -60,10 +68,10 @@ app.engine(
     layoutsDir: path.join(__dirname, "/views/layout"),
     helpers: require("./cms/helpers/handlebars-helpers"),
     // extname: "hbs",
-    runtimeOptions: {
-      allowProtoPropertiesByDefault: true,
-      allowProtoMethodsByDefault: true,
-    },
+    // runtimeOptions: {
+    //   allowProtoPropertiesByDefault: true,
+    //   allowProtoMethodsByDefault: true,
+    // },
   })
 );
 
@@ -107,14 +115,14 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-console.log(`PORT IS ALIVE AND IT LISTEN TO PORT http://localhost:${PORT}`);
-});
+// app.listen(PORT, () => {
+// console.log(`PORT IS ALIVE AND IT LISTEN TO PORT http://localhost:${PORT}`);
+// });
 
 var httpServer = http.createServer(app);
 // httpServer.listen(PORT);
 
-var server = httpServer.listen(PORT);
+var server = httpServer.listen(PORT_HTTPS);
 server.keepAliveTimeout = 60 * 1000 * 60 * 10;
 server.headersTimeout = 65 * 1000 * 60 * 10;
 
