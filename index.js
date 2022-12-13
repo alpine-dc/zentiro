@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const session = require('express-session');
 const app = express();
-const port = process.env.PORT || 3089;
+const PORT = process.env.PORT || 3089;
 const IP = process.env.IP || 'localhost';
 const cors = require("cors");
 const bodyParser = require('body-parser');
@@ -24,6 +24,10 @@ const apiRouter = require('./app/routes/index'),
 const { notFound, errorHandler } = require('./app/middlewares/error');
 const cron = require("node-cron");
 const CronService = require("./app/services/scheduler");
+var http = require("http");
+var https = require("https");
+const PORT_HTTPS = process.env.PORT_HTTPS || 8443;
+
 
 // app.use(express.static(path.resolve(__dirname, 'Public')));
 app.use(express.static('Public'));
@@ -103,8 +107,31 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(port, () => {
-console.log(`PORT IS ALIVE AND IT LISTEN TO PORT http://localhost:${port}`);
+app.listen(PORT, () => {
+console.log(`PORT IS ALIVE AND IT LISTEN TO PORT http://localhost:${PORT}`);
+});
+
+var httpServer = http.createServer(app);
+// httpServer.listen(PORT);
+
+var server = httpServer.listen(PORT);
+server.keepAliveTimeout = 60 * 1000 * 60 * 10;
+server.headersTimeout = 65 * 1000 * 60 * 10;
+
+if (process.env.use_https == "true") {
+  var privateKey = fs.readFileSync(process.env.privateKey_https, "utf8");
+  var certificate = fs.readFileSync(process.env.certificate_https, "utf8");
+  var credentials = { key: privateKey, cert: certificate };
+  var httpsServer = https.createServer(credentials, app);
+  // httpsServer.listen(PORT_HTTPS);
+
+  var server2 = httpsServer.listen(PORT_HTTPS);
+  server2.keepAliveTimeout = 60 * 1000 * 60 * 10;
+  server2.headersTimeout = 65 * 1000 * 60 * 10;
+}
+
+process.on('unhandledRejection', (reason, promise) => {
+  console.log('Unhandled Rejection at:', reason.stack || reason)
 });
 
 // Sync database
