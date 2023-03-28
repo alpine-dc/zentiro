@@ -25,6 +25,10 @@ class Category {
     }
 
     static async categoryDetails(req, res) {
+        if (req.params.permalink === 'bathtub') {
+            const query = `SELECT * FROM products WHERE category_id IN (1, 2, 3, 8) ORDER BY title ASC`
+
+        }
         const cat = await db.category.findOne({
             where: {
                 permalink: req.params.permalink

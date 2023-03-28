@@ -115,9 +115,9 @@ app.get("*", (req, res) => {
   });
 });
 
-// app.listen(PORT, () => {
-// console.log(`PORT IS ALIVE AND IT LISTEN TO PORT http://localhost:${PORT}`);
-// });
+app.listen(PORT, () => {
+console.log(`PORT IS ALIVE AND IT LISTEN TO PORT http://localhost:${PORT}`);
+});
 
 var httpServer = http.createServer(app);
 // httpServer.listen(PORT);
